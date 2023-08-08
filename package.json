@@ -1,0 +1,24 @@
+{
+  "name": "pokemon_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sauliusss/pokemon_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sauliusss/pokemon_api/issues"
+  },
+  "homepage": "https://github.com/sauliusss/pokemon_api#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
