@@ -45,6 +45,17 @@ let card = function (data) {
   const specialDefence = data.stats[4].base_stat;
   // speed stats
   const speed = data.stats[5].base_stat;
+  appendTypes(data.types);
+};
+
+// make pokemon types
+
+let appendTypes = function (types) {
+  types.forEach(function (item) {
+    let span = document.createElement("span");
+    span.textContent = item.type.name;
+    document.querySelector(".types").append(span);
+  });
 };
 
 // add eventListener
