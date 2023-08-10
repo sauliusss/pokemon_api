@@ -1,5 +1,6 @@
 const url = "https://pokeapi.co/api/v2/pokemon/";
 const btn = document.querySelector("#btn");
+const hp = document.querySelector("#hp");
 
 // set async and await function
 // getUrl();
@@ -19,8 +20,31 @@ let pokemonId = function () {
   async function getUrl() {
     const response = await fetch(pokemonUrlId);
     const data = await response.json();
-    console.log(data);
+    card(data);
   }
+};
+
+// Generate card
+
+// make card function
+let card = function (data) {
+  console.log(data);
+  // get data stats
+  const hp = data.stats[0].base_stat;
+  // get data image
+  const imgSrc = data.sprites.other.dream_world.front_default;
+  // get pokemon name
+  const name = data.name;
+  // get attack stats
+  const attack = data.stats[1].base_stat;
+  // get defence stats
+  const defence = data.stats[2].base_stat;
+  // special-attack stats
+  const specialAttack = data.stats[3].base_stat;
+  // special-defense stats
+  const specialDefence = data.stats[4].base_stat;
+  // speed stats
+  const speed = data.stats[5].base_stat;
 };
 
 // add eventListener
