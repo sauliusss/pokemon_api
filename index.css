@@ -1,0 +1,59 @@
+.card_container {
+  width: 250px;
+  height: 400px;
+  border: 7px solid grey;
+  background-color: green;
+}
+
+.name_hp {
+  display: flex;
+  height: 30px;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.hp {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.card_image {
+  width: 250px;
+  height: 200px;
+  background-color: white;
+}
+
+.pokemon_type {
+  display: flex;
+  height: 30px;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.pokemon_stats {
+  display: flex;
+  height: 40px;
+  margin: 30px 0 0 0;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.special_stats {
+  display: flex;
+  height: 40px;
+
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  border: 1px solid black;
+}
