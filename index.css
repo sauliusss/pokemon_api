@@ -65,3 +65,47 @@
   justify-content: space-between;
   border: 1px solid black;
 }
+button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(70%, 0%);
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #333, #111); /* Darker initial gradient background */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.5s ease-in-out;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #333, #111); /* Darker initial overlay color */
+  opacity: 0.3;
+  transition: opacity 0.3s ease-in-out;
+}
+
+button:hover::before {
+  opacity: 0.6;
+}
+
+button span {
+  position: relative;
+  z-index: 2;
+}
+
+button:hover {
+  transform: translateY(-2px); /* Slight upward hover effect */
+  background: linear-gradient(45deg, #222, #000); /* Updated gradient on hover */
+}
