@@ -83,9 +83,8 @@ let appendTypes = function (types) {
   console.log(types);
   types.forEach(function (item) {
     let span = document.createElement("SPAN");
-    span.textContent = `${item.types.name}`;
-    document.querySelector(".pokemonTypes").append(span);
-    pokemonTypes.append(span);
+    span.textContent = item.type.name;
+    document.querySelector(".pokemon_types").append(span);
   });
 };
 
