@@ -9,6 +9,28 @@ const specialAttack = document.querySelector(".special-attack");
 const specialDefence = document.querySelector(".special-defence");
 const speed = document.querySelector(".speed");
 const pokemonTypes = document.querySelector(".pokemon_types");
+const cardContainer = document.querySelector(".card_container");
+
+// colors
+
+const typeColor = {
+  bug: "#26de81",
+  dragon: "#ffeaa7",
+  electric: "#fed330",
+  fairy: "#FF0069",
+  fighting: "#30336b",
+  fire: "#f0932b",
+  flying: "#81ecec",
+  grass: "#00b894",
+  ground: "#EFB549",
+  ghost: "#a55eea",
+  ice: "#74b9ff",
+  normal: "#95afc0",
+  poison: "#6c5ce7",
+  psychic: "#a29bfe",
+  rock: "#2d3436",
+  water: "#0190FF",
+};
 
 // set async and await function
 // getUrl();
@@ -28,7 +50,7 @@ let pokemonId = function () {
   async function getUrl() {
     const response = await fetch(pokemonUrlId);
     const data = await response.json();
-    cardContainer(data);
+    card(data);
     name.textContent = `Name: ${data.name}`;
     hp.textContent = `HP: ${data.stats[0].base_stat}`;
     attack.textContent = `Attack: ${data.stats[1].base_stat}`;
@@ -48,12 +70,15 @@ let pokemonId = function () {
 // Generate card
 
 // make card function
-let cardContainer = function (data) {
+let card = function (data) {
   console.log(data);
   // get data stats
   // const hp = data.stats[0].base_stat;
   // get data image
   const imgSrc = data.sprites.other.dream_world.front_default;
+
+  const themeColor = typeColor[data.types[0].type.name];
+  console.log(themeColor);
 
   // get pokemon name
   // const name = data.name;
@@ -68,7 +93,7 @@ let cardContainer = function (data) {
   // speed stats
   // const speed = data.stats[5].base_stat;
   appendTypes(data.types);
-
+  colorCard(themeColor);
   // make stats in html section
 
   image.innerHTML = `
@@ -85,6 +110,13 @@ let appendTypes = function (types) {
     let span = document.createElement("SPAN");
     span.textContent = item.type.name;
     document.querySelector(".pokemon_types").append(span);
+  });
+};
+
+let colorCard = function (color) {
+  cardContainer.style.background = `radial-gradient( ${color} 100%, #ffffff 100%)`;
+  cardContainer.querySelectorAll(".pokemon_types span").forEach(function (typeColor) {
+    typeColor.style.backgroundColor = color;
   });
 };
 
