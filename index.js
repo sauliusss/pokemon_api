@@ -92,14 +92,21 @@ let card = function (data) {
   // const specialDefence = data.stats[4].base_stat;
   // speed stats
   // const speed = data.stats[5].base_stat;
-  appendTypes(data.types);
+
   colorCard(themeColor);
+  colorButton(themeColor);
   // make stats in html section
 
   image.innerHTML = `
   <div class="card_image">
         <img src="${imgSrc}"
       </div>`;
+
+  pokemonTypes.innerHTML = `
+  <div class="pokemon_types">
+      
+    </div>`;
+  appendTypes(data.types);
 };
 
 // make pokemon types
@@ -116,6 +123,12 @@ let appendTypes = function (types) {
 let colorCard = function (color) {
   cardContainer.style.background = `radial-gradient( ${color} 100%, #ffffff 100%)`;
   cardContainer.querySelectorAll(".pokemon_types span").forEach(function (typeColor) {
+    typeColor.style.backgroundColor = color;
+  });
+};
+let colorButton = function (color) {
+  btn.style.background = `radial-gradient( ${color} 100%, #ffffff 100%)`;
+  btn.querySelectorAll(".pokemon_types span").forEach(function (typeColor) {
     typeColor.style.backgroundColor = color;
   });
 };
